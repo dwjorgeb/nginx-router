@@ -1,0 +1,12 @@
+version: '3'
+services:
+  nginx:
+    build:
+      context: ./conf/nginx
+      dockerfile: nginx.dockerfile
+    image: nginx-router
+    container_name: nginx_router
+    restart: unless-stopped
+    ports:
+      - "80:80"
+      - "443:443"
